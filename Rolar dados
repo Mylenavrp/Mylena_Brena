@@ -1,0 +1,10 @@
+#n = n dados a serem rolados
+#lista = lista de resultado dos n dados rolados
+import random
+
+def rolar_dados(n):
+    lista = []
+    for i in range(n):
+        valor_dado = random.randint(1,6)          #sorteio do valor do dado
+        lista.append(valor_dado)
+    return lista
