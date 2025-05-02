@@ -18,3 +18,4 @@ def rolar_dados(n):
 def  guardar_dado(lista_rolados,dados_no_estoque, dado_para_guardar):
     dados_no_estoque.append(dados_rolados)
     return dados_no_estoque
+
