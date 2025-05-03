@@ -131,6 +131,20 @@ def calcula_pontos_full_house(faces):
         return total
     return 0
 
+def calcula_pontos_quadra(faces):
+    #conta quantas vezes cada face aparece na lista de 5 dados
+    frequencia = {}
+    for face in faces:
+        frequencia[face] = frequencia.get(face,0) + 1
+    
+    #se aparecer algum valor pelo menos 4 vezes, pontua na soma total
+    for qtd in frequencia.values():
+        if qtd >= 4:
+            total = 0
+            for i in faces:
+                total += i
+            return total
+    return 0  
 
                 
 
