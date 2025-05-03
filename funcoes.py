@@ -59,6 +59,12 @@ def calcula_pontos_regra_simples(faces):
         pontos[face] = qtd * face
     return pontos
 
+def calcula_pontos_soma(faces):
+    #soma os valores de todas as faces
+    total = 0
+    for valor in faces:
+        total += valor
+    return total
 
 
                 
