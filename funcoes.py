@@ -106,5 +106,31 @@ def calcula_pontos_sequencia_alta(faces):
                 return 30
     return 0
 
+def calcula_pontos_full_house(faces):
+    #conta quantas vezes cada face aparece na lista de 5 dados
+    frequencia = {}      
+    for face in faces:
+        frequencia[face] = frequencia.get(face, 0)+1
+    #full house tem exatamente 2 valores distintos
+    if len(frequencia) != 2:
+        return 0
+    
+    #testa se o valor aparece 3 vezes e o outro 2
+    tem_tres = False
+    tem_dois= False
+    for qtd in frequencia.values():
+        if qtd ==3:
+            tem_tres = True
+        elif qtd ==2:
+            tem_dois = True
+    #soma dos 5 dados
+    if tem_tres and tem_dois:
+        total = 0
+        for face in faces:
+            total += face
+        return total
+    return 0
+
+
                 
 
