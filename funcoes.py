@@ -86,5 +86,25 @@ def calcula_pontos_sequencia_baixa(faces):
             
     return 0
 
+def calcula_pontos_sequencia_alta(faces):
+    #possíveis sequencias(1,2,3,4,5 - 2,3,4,5,6)
+    for inicio in(1,2):
+        seq1 = seq2 = seq3 = seq4 = seq5 = False
+        for i in faces:
+            if i == inicio:
+                seq1 = True
+            elif i == inicio +1:
+                seq2 = True
+            elif i == inicio +2:
+                seq3 = True
+            elif i == inicio +3:
+                seq4 = True
+            elif i == inicio +4:
+                seq5 = True
+            
+            if seq1 and seq2 and seq3 and seq4 and seq5:
+                return 30
+    return 0
+
                 
 
