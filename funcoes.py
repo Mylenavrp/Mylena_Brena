@@ -66,6 +66,25 @@ def calcula_pontos_soma(faces):
         total += valor
     return total
 
+def calcula_pontos_sequencia_baixa(faces):
+    #possíveis sequencias(1,2,3,4 - 2,3,4,5 - 3,4,5,6)
+    #testa cada possível sequencia
+    for inicio in(1,2,3):
+        seq1 = seq2 = seq3 = seq4 = False
+        for i in faces:
+            if i == inicio:
+                seq1 = True
+            elif i == inicio +1:
+                seq2 = True
+            elif i == inicio +2:
+                seq3 = True
+            elif i == inicio +3:
+                seq4 = True
+            
+            if seq1 and seq2 and seq3 and seq4:
+                return 15
+            
+    return 0
 
                 
 
