@@ -146,5 +146,6 @@ def calcula_pontos_quadra(faces):
             return total
     return 0  
 
+teste_1
                 
 
