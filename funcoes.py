@@ -147,6 +147,7 @@ def calcula_pontos_quadra(faces):
     return 0 
 
 def calcula_pontos_quina(lista_de_dados):
+    #conta quantas vezes um mesmo valor caiu
     dic={}
     for num in lista_de_dados:
         if num in dic:
@@ -158,5 +159,13 @@ def calcula_pontos_quina(lista_de_dados):
             return 50
     return 0
         
-                
+def calcula_pontos_regra_avancada(lista_de_dados):
+    dic={'cinco_iguais': calcula_pontos_quina(lista_de_dados),
+    'full_house':calcula_pontos_full_house(lista_de_dados) ,
+    'quadra': calcula_pontos_quadra(lista_de_dados),
+    'sem_combinacao': calcula_pontos_soma(lista_de_dados) ,
+    'sequencia_alta': calcula_pontos_sequencia_alta(lista_de_dados),
+    'sequencia_baixa': calcula_pontos_sequencia_baixa(lista_de_dados)
+}
+    return dic   
 
