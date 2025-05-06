@@ -169,3 +169,12 @@ def calcula_pontos_regra_avancada(lista_de_dados):
 }
     return dic   
 
+def faz_jogada(lista_de_dados,categoria,cartela):
+    if categoria in [str(numero) for numero in cartela['regra_simples']]:
+        categoria_int = int(categoria)
+        pontos = calcula_pontos_regra_simples(lista_de_dados)
+        cartela['regra_simples'][categoria_int]=pontos[categoria_int]
+    elif categoria in cartela['regra_avancada']:
+        pontos=calcula_pontos_regra_avancada(lista_de_dados)
+        cartela['regra_avancada'][categoria]=pontos[categoria]
+    return cartela
