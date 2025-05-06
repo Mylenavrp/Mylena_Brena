@@ -146,6 +146,17 @@ def calcula_pontos_quadra(faces):
             return total
     return 0 
 
-
+def calcula_pontos_quina(lista_de_dados):
+    dic={}
+    for num in lista_de_dados:
+        if num in dic:
+            dic[num]+=1
+        else:
+            dic[num]=1
+    for contagem in dic.values():
+        if contagem>=5:
+            return 50
+    return 0
+        
                 
 
