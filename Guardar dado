@@ -1,8 +1,0 @@
-#lista_rolados = valor do n dados que foram rolados
-#dados_no_estoque = dado que o jogador decidiu guardar
-#dado_para_guardar = posição/indice do dado que será guardado
-
-
-def  guardar_dado(lista_rolados,dados_no_estoque, dado_para_guardar):
-    dados_no_estoque.append(dados_rolados)
-    return dados_no_estoque
