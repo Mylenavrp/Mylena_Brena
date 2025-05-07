@@ -26,6 +26,8 @@ for rodada in range(12):
 
         if opcao == "1":
             print("Digite o índice do dado a ser guardado (0 a 4):")
+            # indice = int(input())
+
             indice_str = input()
             if indice_str.isdigit():
                 indice = int(indice_str)
