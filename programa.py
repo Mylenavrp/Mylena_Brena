@@ -26,29 +26,25 @@ for rodada in range(12):
 
         if opcao == "1":
             print("Digite o índice do dado a ser guardado (0 a 4):")
-            # indice = int(input())
-
-            indice_str = input()
-            if indice_str.isdigit():
-                indice = int(indice_str)
-                if 0 <= indice < len(dados_rolados):
-                    dados_rolados, dados_guardados = guardar_dado(dados_rolados, dados_guardados, indice)
-                else:
-                    print("Índice inválido.")
-            else:
-                print("Índice inválido.")
+            indice = int(input())
+            lista_temporaria = guardar_dado(dados_rolados, dados_guardados, indice)
+            dados_rolados = lista_temporaria[0]
+            dados_guardados = lista_temporaria[1]
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
+            print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
+            opcao = input()
 
         elif opcao == "2":
             print("Digite o índice do dado a ser removido (0 a 4):")
-            indice_str = input()
-            if indice_str.isdigit():
-                indice = int(indice_str)
-                if 0 <= indice < len(dados_guardados):
-                    dados_rolados, dados_guardados = remover_dado(dados_rolados, dados_guardados, indice)
-                else:
-                    print("Índice inválido.")
-            else:
-                print("Índice inválido.")
+            indice = int(input())
+            lista_temporaria = remover_dado(dados_rolados, dados_guardados, indice)
+            dados_rolados = lista_temporaria[0]
+            dados_guardados = lista_temporaria[1]
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
+            print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
+            opcao = input()
 
         elif opcao == "3":
             if rerrolagens >= 2:
@@ -56,9 +52,17 @@ for rodada in range(12):
             else:
                 dados_rolados = rolar_dados(len(dados_rolados))
                 rerrolagens += 1
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
+            print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
+            opcao = input()
 
         elif opcao == "4":
             imprime_cartela(cartela)
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
+            print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
+            opcao = input()
 
         elif opcao == "0":
             print("Digite a combinação desejada:")
@@ -81,6 +85,7 @@ for rodada in range(12):
                     print("Essa combinação já foi utilizada.")
             else:
                 print("Combinação inválida. Tente novamente.")
+                categoria = input()
 
             if jogada_valida:
                 todos_os_dados = dados_rolados + dados_guardados
@@ -89,6 +94,7 @@ for rodada in range(12):
 
         else:
             print("Opção inválida. Tente novamente.")
+            opcao = input()
 
 # fim do jogo
 imprime_cartela(cartela)
